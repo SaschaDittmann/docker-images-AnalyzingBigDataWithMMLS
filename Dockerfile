@@ -18,6 +18,7 @@ RUN Revo64 -e 'install.packages(c("tidyverse", "lubridate", "stringr", "rgeos", 
 RUN cd /home/rstudio \
 	&& wget https://hdinsightresources.blob.core.windows.net/nyctaxi/NYC_taxi.zip \
 	&& unzip NYC_taxi.zip -d data/ \
-	&& chown -R rstudio:rstudio /home/rstudio/data
+	&& chown -R rstudio:rstudio /home/rstudio/data \
+	&& rm -rf /home/rstudio/NYC_taxi.zip
 
 ADD scripts /home/rstudio/scripts/
