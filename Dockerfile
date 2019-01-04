@@ -6,13 +6,21 @@ RUN apt-get update \
 		libxml2-dev \
 		libgeos-dev \
 		libjpeg-dev \
+		zlibc \
+		zlib1g \
+		zlib1g-dev \
 	&& rm -rf /tmp/* \
 	&& apt-get autoremove -y \
 	&& apt-get autoclean -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 # install required R packages
-RUN Revo64 -e 'install.packages(c("tidyverse", "lubridate", "stringr", "rgeos", "maptools", "ggmap", "gridExtra", "ggrepel", "seriation"))' --no-save \
+# install devtools incl. the certificate error workaround
+# install ggmap from github
+RUN Revo64 -e 'install.packages(c("devtools", "tidyverse", "lubridate", "stringr", "rgeos", "maptools", "gridExtra", "ggrepel", "seriation"))' --no-save \
+	&& Revo64 -e 'remove.packages(c("curl","httr"))' --no-save \
+	&& Revo64 -e 'install.packages(c("curl","httr")' --no-save \
+	&& Revo64 -e 'devtools::install_github("dkahle/ggmap", ref = "tidyup")' --no-save \
 	&& rm -rf /tmp/*
 
 RUN cd /home/rstudio \
