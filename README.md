@@ -1,7 +1,7 @@
 # Workshop: Analyzing Big Data with Microsoft Machine Learning Server
 
 [![](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS)
-[![](https://img.shields.io/github/tag/SaschaDittmann/docker-images-rstudio.svg)](hhttps://github.com/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS)
+[![](https://img.shields.io/github/tag/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS.svg)](hhttps://github.com/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS)
 
 This Docker Image is for development & testing purposes ONLY.
 
@@ -14,11 +14,11 @@ It is based on the [rocker/rstudio](https://hub.docker.com/r/rocker/rstudio-stab
 
 version          | description                               | size 
 ---------------- | ----------------------------------------- | ------
-[![](https://images.microbadger.com/badges/version/bytesmith/rstudio.svg)](https://hub.docker.com/r/bytesmith/analyzing-big-data-with-mmls) | Latest build from the [GitHub Repo](https://github.com/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS) | [![](https://images.microbadger.com/badges/image/bytesmith/rstudio.svg)](https://microbadger.com/images/bytesmith/analyzing-big-data-with-mmls)
+[![](https://images.microbadger.com/badges/version/bytesmith/analyzing-big-data-with-mmls.svg)](https://hub.docker.com/r/bytesmith/analyzing-big-data-with-mmls) | Latest build from the [GitHub Repo](https://github.com/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS) | [![](https://images.microbadger.com/badges/image/bytesmith/analyzing-big-data-with-mmls.svg)](https://microbadger.com/images/bytesmith/analyzing-big-data-with-mmls)
 
 ## Quickstart
 ```
-docker run --rm -p 8787:8787 -e PASSWORD=yourpasswordhere bytesmith/rstudio
+docker run --rm -p 8787:8787 -e PASSWORD=yourpasswordhere bytesmith/analyzing-big-data-with-mmls
 ```
 
 Visit *localhost:8787* in your browser and log in with username *rstudio* and the password you set. 
@@ -27,13 +27,13 @@ Visit *localhost:8787* in your browser and log in with username *rstudio* and th
 
 ## Give the user root permissions (add to sudoers)
 ```
-docker run -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=yourpasswordhere bytesmith/rstudio
+docker run -d -p 8787:8787 -e ROOT=TRUE -e PASSWORD=yourpasswordhere bytesmith/analyzing-big-data-with-mmls
 ```
 
 Link a local volume (in this example, the current working directory, $(pwd)) to the rstudio container:
 
 ```
-docker run -d -p 8787:8787 -v $(pwd):/home/rstudio -e PASSWORD=yourpasswordhere bytesmith/rstudio
+docker run -d -p 8787:8787 -v $(pwd):/home/rstudio -e PASSWORD=yourpasswordhere bytesmith/analyzing-big-data-with-mmls
 ```
 
 ## Bypassing the authentication step
@@ -47,7 +47,7 @@ Simply set the environmental variable *DISABLE_AUTH=true*, e.g.
 docker run --rm \
   -p 127.0.0.1:8787:8787 \
   -e DISABLE_AUTH=true \
-  bytesmith/rstudio
+  bytesmith/analyzing-big-data-with-mmls
 ```
 
 Navigate to *http://localhost:8787* and you should be logged into RStudio as
@@ -74,6 +74,6 @@ R support is built on a legacy of Microsoft R Server 9.x and Revolution R Enterp
 
 Additionally, Machine Learning Server enables operationalization support so you can deploy your models to a scalable grid for both batch and real-time scoring.
 
-## Trademarks ##
+## Trademarks
 
 RStudio is a registered trademark of RStudio, Inc.  The use of the trademarked term RStudio and the distribution of the RStudio binaries through the images hosted on [hub.docker.com](https://registry.hub.docker.com/) has been granted by explicit permission of RStudio.  Please review [RStudio's trademark use policy](http://www.rstudio.com/about/trademark/) and address inquiries about further distribution or other questions to [permissions@rstudio.com](mailto:permissions@rstudio.com).
