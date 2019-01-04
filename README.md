@@ -1,6 +1,6 @@
 # Workshop: Analyzing Big Data with Microsoft Machine Learning Server
 
-[![](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS)
+[![](https://img.shields.io/github/license/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS.svg)](https://github.com/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS)
 [![](https://img.shields.io/github/tag/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS.svg)](hhttps://github.com/SaschaDittmann/docker-images-AnalyzingBigDataWithMMLS)
 
 This Docker Image is for development & testing purposes ONLY.
