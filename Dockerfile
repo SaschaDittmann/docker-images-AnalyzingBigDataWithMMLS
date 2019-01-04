@@ -19,7 +19,7 @@ RUN apt-get update \
 # install ggmap from github
 RUN Revo64 -e 'install.packages(c("devtools", "tidyverse", "lubridate", "stringr", "rgeos", "maptools", "gridExtra", "ggrepel", "seriation"))' --no-save \
 	&& Revo64 -e 'remove.packages(c("curl","httr"))' --no-save \
-	&& Revo64 -e 'install.packages(c("curl","httr")' --no-save \
+	&& Revo64 -e 'install.packages(c("curl","httr"))' --no-save \
 	&& Revo64 -e 'devtools::install_github("dkahle/ggmap", ref = "tidyup")' --no-save \
 	&& rm -rf /tmp/*
 
